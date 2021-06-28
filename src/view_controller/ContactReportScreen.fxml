@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="572.0" prefWidth="957.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_controller.ContactReport">
+   <children>
+      <Pane prefHeight="60.0" prefWidth="957.0" style="-fx-background-color: #2E3f50;">
+         <children>
+            <Label layoutX="386.0" layoutY="13.0" prefHeight="35.0" prefWidth="185.0" text="Contact Reports" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ComboBox fx:id="contactCB" layoutX="425.0" layoutY="470.0" onAction="#selectContact" prefWidth="150.0" promptText="Select a Contact" />
+      <TableView fx:id="contactTable" layoutX="68.0" layoutY="151.0" prefHeight="199.0" prefWidth="821.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="93.0" text="AppointmentID" />
+            <TableColumn fx:id="title" prefWidth="120.0" text="Title" />
+            <TableColumn fx:id="type" prefWidth="117.0" text="Type" />
+            <TableColumn fx:id="description" minWidth="7.0" prefWidth="139.0" text="Description" />
+            <TableColumn fx:id="startDate" minWidth="0.0" prefWidth="142.0" text="Start Date" />
+            <TableColumn fx:id="endDate" prefWidth="129.0" text="End Date" />
+            <TableColumn fx:id="customerID" text="Customer_ID" />
+        </columns>
+      </TableView>
+      <Label layoutX="325.0" layoutY="469.0" prefHeight="27.0" prefWidth="77.0" text="Contact:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="306.0" layoutY="100.0" prefHeight="35.0" prefWidth="346.0" text="View Appointments By Selected Contact">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeBtn" layoutX="851.0" layoutY="512.0" mnemonicParsing="false" onAction="#close" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #2ECC71;" text="Close" textFill="WHITE" />
+   </children>
+</AnchorPane>

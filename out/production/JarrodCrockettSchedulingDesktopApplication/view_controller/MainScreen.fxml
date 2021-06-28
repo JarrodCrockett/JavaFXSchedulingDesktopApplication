@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="746.0" prefWidth="1111.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_controller.MainScreen">
+   <children>
+      <Pane prefHeight="57.0" prefWidth="1111.0" style="-fx-background-color: #2E3F50;">
+         <children>
+            <Label layoutX="380.0" layoutY="11.0" prefHeight="35.0" prefWidth="351.0" text=" Haritage Homes Construction" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="61.0" layoutY="64.0" prefHeight="296.0" prefWidth="990.0" style="-fx-border-color: blue; -fx-border-radius: 20px;">
+         <children>
+            <TableView fx:id="appointmentTable" layoutX="47.0" layoutY="47.0" prefHeight="178.0" prefWidth="896.0">
+              <columns>
+                <TableColumn fx:id="appID" prefWidth="98.0" text="Appointment ID" />
+                <TableColumn fx:id="apptitle" prefWidth="75.0" text="Title" />
+                  <TableColumn fx:id="appDesc" prefWidth="92.0" text="Description" />
+                  <TableColumn fx:id="appLoca" prefWidth="100.0" text="Location" />
+                  <TableColumn fx:id="appCont" prefWidth="82.0" text="Contact" />
+                  <TableColumn fx:id="apptype" prefWidth="73.0" text="Type" />
+                  <TableColumn fx:id="appSD" prefWidth="144.0" text="Start Date" />
+                  <TableColumn fx:id="appED" prefWidth="123.0" text="End Date" />
+                  <TableColumn fx:id="appCustID" prefWidth="108.0" text="Customer ID" />
+              </columns>
+            </TableView>
+            <Button fx:id="addAppBtn" layoutX="672.0" layoutY="241.0" mnemonicParsing="false" onAction="#addApp" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #2ECC71;" text="Add" textFill="WHITE" />
+            <Button fx:id="updateAppBtn" layoutX="769.0" layoutY="241.0" mnemonicParsing="false" onAction="#updateApp" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #2ECC71;" text="Update" textFill="WHITE" />
+            <Button fx:id="deleteAppBtn" layoutX="867.0" layoutY="241.0" mnemonicParsing="false" onAction="#deleteApp" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #2ECC71;" text="Delete" textFill="WHITE" />
+            <Label layoutX="433.0" layoutY="14.0" prefHeight="27.0" prefWidth="125.0" text="Appointments">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="filterWeekRadioBtn" layoutX="179.0" layoutY="249.0" mnemonicParsing="false" onAction="#weekSelected" prefHeight="17.0" prefWidth="87.0" text="Week">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="filterBy" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="filterMonthRadioBtn" layoutX="273.0" layoutY="249.0" mnemonicParsing="false" onAction="#monthSelected" prefHeight="17.0" prefWidth="87.0" text="Month" toggleGroup="$filterBy">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label layoutX="86.0" layoutY="249.0" prefHeight="20.0" prefWidth="66.0" text="Filter by:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="allSelectedRadio" layoutX="373.0" layoutY="249.0" mnemonicParsing="false" onAction="#allSelected" prefHeight="17.0" prefWidth="87.0" text="All" toggleGroup="$filterBy">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="61.0" layoutY="395.0" prefHeight="296.0" prefWidth="990.0" style="-fx-border-color: blue; -fx-border-radius: 20px;">
+         <children>
+            <TableView fx:id="customerTable" layoutX="47.0" layoutY="47.0" prefHeight="178.0" prefWidth="896.0">
+               <columns>
+                  <TableColumn fx:id="custCustID" prefWidth="82.0" text="Customer ID" />
+                  <TableColumn fx:id="custName" prefWidth="100.0" text="Name" />
+                  <TableColumn fx:id="custAddress" prefWidth="183.0" text="Address" />
+                  <TableColumn fx:id="custPostCode" prefWidth="104.0" text="Postal Code" />
+                  <TableColumn fx:id="custDivi" prefWidth="157.0" text="Division" />
+                  <TableColumn fx:id="custCountry" prefWidth="126.0" text="Country" />
+                  <TableColumn fx:id="custPhone" prefWidth="143.0" text="Phone Number" />
+               </columns>
+            </TableView>
+            <Button fx:id="addCustBtn" layoutX="671.0" layoutY="250.0" mnemonicParsing="false" onAction="#addCust" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #2ECC71;" text="Add" textFill="WHITE" />
+            <Button fx:id="updateCustBtn" layoutX="770.0" layoutY="250.0" mnemonicParsing="false" onAction="#updateCust" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #2ECC71;" text="Update" textFill="WHITE" />
+            <Button fx:id="deleteCustBtn" layoutX="867.0" layoutY="250.0" mnemonicParsing="false" onAction="#deleteCust" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #2ECC71;" text="Delete" textFill="WHITE" />
+            <Label layoutX="447.0" layoutY="14.0" prefHeight="27.0" prefWidth="96.0" text="Customers">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="customerSearchTB" layoutX="641.0" layoutY="14.0" onAction="#searchCustomers" prefHeight="25.0" prefWidth="232.0" promptText="Search Customers by Name or ID" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="closeProgBtn" layoutX="982.0" layoutY="706.0" mnemonicParsing="false" onAction="#closeProg" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #2ECC71;" text="Close" textFill="WHITE" />
+      <Button fx:id="logoutBtn" layoutX="894.0" layoutY="706.0" mnemonicParsing="false" onAction="#logout" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #2ECC71;" text="Logout" textFill="WHITE" />
+      <Button fx:id="contactReportBtn" layoutX="152.0" layoutY="706.0" mnemonicParsing="false" onAction="#contactReport" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #2ECC71;" text="Contacts Report" textFill="WHITE" />
+      <Label layoutX="61.0" layoutY="709.0" prefHeight="27.0" prefWidth="76.0" text="Reports:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="customerReportBtn" layoutX="303.0" layoutY="706.0" mnemonicParsing="false" onAction="#customerReport" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #2ECC71;" text="Customer Report" textFill="WHITE" />
+      <Button fx:id="divisionReportBtn" layoutX="453.0" layoutY="706.0" mnemonicParsing="false" onAction="#divisionReportPage" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #2ECC71;" text="Division Report" textFill="WHITE" />
+      <Label fx:id="appointmentAlert" layoutX="108.0" layoutY="363.0" prefHeight="20.0" prefWidth="896.0" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
